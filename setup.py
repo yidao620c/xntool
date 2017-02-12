@@ -40,8 +40,8 @@ setup(
     keywords=['xntool', 'qiuniu', 'excel', 'pdf', 'mysql'],
     entry_points={
         # "xntool.registered_commands": [
-        #     "upload = twine.commands.upload:main",
-        #     "register = twine.commands.register:main",
+        #     "upload = xntool.commands.upload:main",
+        #     "register = xntool.commands.register:main",
         # ],
         "console_scripts": [
             "xntool = xntool.__main__:main",
