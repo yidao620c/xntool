@@ -10,14 +10,15 @@ import qiniu.config
 import os
 from os.path import join
 import sys
+from xntool.config import cfg
 
 # 需要填写你的 Access Key 和 Secret Key
-ACCESS_KEY = 'xxxxxxxxxxxxxxxx'
-SECRET_KEY = 'yyyyyyyyyyyyyyyy'
+ACCESS_KEY = cfg('qiniu', 'ACCESS_KEY')
+SECRET_KEY = cfg('qiniu', 'SECRET_KEY')
 # 七牛空间URL
-URL_PRE = 'http://yidaospace.qiniudn.com/'
+URL_PRE = cfg('qiniu', 'URL_PRE')
 # 要上传的空间名
-BUCKET_NAME = 'yidaospace'
+BUCKET_NAME = cfg('qiniu', 'BUCKET_NAME')
 
 
 def main(pic_dir):
