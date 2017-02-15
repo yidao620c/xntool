@@ -11,7 +11,7 @@ __title__ = "xntool"
 __summary__ = "Collection of utilities"
 __uri__ = "https://github.com/yidao620c/xntool"
 
-__version__ = "0.0.2"
+__version__ = "0.8.2"
 
 __author__ = "Donald Stufft and individual contributors"
 __email__ = "yidao620@gmail.com"

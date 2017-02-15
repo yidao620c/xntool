@@ -7,11 +7,18 @@
 """
 
 import os
+import sys
+import shutil
 from setuptools.command.install import install
 
 
 class CustomInstallCommand(install):
     def run(self):
-        if not os.path.exists('/etc/xntool'):
-            os.makedirs('/etc/xntool')
         install.run(self)
+        # move configuration directory
+        # print('CustomInstallCommand.. {}'.format(os.path.join(sys.prefix, 'etc/xntool')))
+        # try:
+        #     shutil.move(os.path.join(sys.prefix, 'etc/xntool'), '/etc/')
+        # except:
+        #     pass
+

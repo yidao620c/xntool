@@ -18,28 +18,13 @@
 
 from setuptools import setup, find_packages
 from xntool.commands import CustomInstallCommand
+import xntool
 
 setup(
     name='xntool',
-    version='0.3.0',
-    packages=find_packages(),
-    # Project uses , so ensure
-    install_requires=[
-        "qiniu>=7.1.1",
-        "lxml>=3.7.2",
-        "openpyxl>=2.4.2",
-        "requests>=2.6.0",
-    ],
-    package_data={
-        # If any package contains *.txt or *.md files, include them:
-        '': ['*.txt', '*.md', '*.conf'],
-        # include any *.msg files found in the 'test' package, too:
-        'test': ['*.msg'],
-    },
-    cmdclass={'install': CustomInstallCommand},
-    data_files=[('/etc/xntool', ['config/xntool.conf']), ],
+    version=xntool.__version__,
     description='funny tools',
-    long_description=open("README_EN.md").read(),
+    long_description=open("README.rst").read(),
     url='https://github.com/yidao620c/xntool',
     author='Xiong Neng',
     author_email='yidao620@gmail.com',
@@ -65,6 +50,27 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
     keywords=['xntool', 'qiuniu', 'excel', 'pdf', 'mysql'],
+    packages=find_packages(),
+    # Project uses , so ensure
+    install_requires=[
+        "qiniu>=7.1.1",
+        "lxml>=3.7.2",
+        "openpyxl>=2.4.2",
+        "requests>=2.6.0",
+    ],
+    # building source ”python setup.py sdist“ use MANIFEST.in
+    # building binary ”python setup.py bdist“ use package_data
+    package_data={
+        # If any package contains *.txt or *.md files, include them:
+        '': ['*.txt', '*.md', '*.rst', '*.in'],
+        # include any *.conf files found in the 'etc' package, too:
+        'etc': ['*.conf'],
+    },
+    # The data_files option can be used to specify additional files
+    # needed by the module distribution: configuration files,
+    # message catalogs, data files
+    data_files=[('etc/xntool', ['etc/xntool.conf']), ],
+    cmdclass={'install': CustomInstallCommand},
     entry_points={
         # "xntool.registered_commands": [
         #     "upload = xntool.commands.upload:main",
@@ -75,4 +81,3 @@ setup(
         ],
     },
 )
-

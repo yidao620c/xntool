@@ -43,14 +43,13 @@ xntool md5 data.txt
 ```
 
 #### 七牛存储图片上传
-修改配置文件`/etc/xntool/xntool.conf`中的[qiniu]部分：
-首先进入你的七牛主页，拿到必要配置参数，修改`xqiniu.py`这个模块中的几个配置
+首先进入你的七牛主页，拿到必要配置参数，修改配置文件`/usr/etc/xntool/xntool.conf`中的[qiniu]部分
 ```
 [qiniu]
 # Access Key
 ACCESS_KEY=xxxxxxxxxxxxxxxx
 # Secret Key
-SECRET_KEY=yyyyyyyyyyyyyyyyyyyyyyyy
+SECRET_KEY=yyyyyyyyyyyyy
 # 七牛空间URL
 URL_PRE=http://yidaospace.qiniudn.com/
 # 要上传的空间名
